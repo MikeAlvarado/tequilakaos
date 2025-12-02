@@ -13,8 +13,8 @@ const Navigation = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     const menuItems = [
-        { label: "INICIO", href: "#" },
-        { label: "SOBRE NOSOTROS", href: "#sobre-nosotros" },
+        { label: "INICIO", href: "#hero" },
+        { label: "SOBRE NOSOTROS", href: "#founders" },
     ];
 
     return (

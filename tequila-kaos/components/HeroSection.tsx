@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const HeroSection = () => {
     return (
-        <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-dark-black">
+        <section id="hero" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-dark-black">
 
             {/* Mobile Logo (White) */}
             <div className="relative w-[80%] h-[60vh] md:hidden z-10">

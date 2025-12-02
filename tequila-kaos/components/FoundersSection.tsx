@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FoundersSection = () => {
     return (
-        <section className="relative min-h-screen w-full bg-dark-black overflow-hidden flex items-center">
+        <section id="founders" className="relative min-h-screen w-full bg-dark-black overflow-hidden flex items-center">
             {/* Background Pattern */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -34,15 +34,26 @@ const FoundersSection = () => {
                         </p>
                     </div>
 
-                    {/* Image Content */}
-                    <div className="flex-1 flex justify-center md:justify-end">
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-beige-agave/20 shadow-2xl">
+                    {/* Images Content - Stacked Vertically */}
+                    <div className="flex-1 flex flex-col items-center md:items-end gap-6 md:gap-8 relative">
+                        {/* Fran - Top Left */}
+                        <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-beige-agave/20 shadow-2xl md:-mr-32">
+                            <Image
+                                src="/assets/images/fran.jpg"
+                                alt="Fran - Founder"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
+                            />
+                        </div>
+                        {/* Mariano - Bottom Right (Offset) */}
+                        <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-beige-agave/20 shadow-2xl md:mr-8">
                             <Image
                                 src="/assets/images/mariano.png"
                                 alt="Mariano - Founder"
                                 fill
                                 className="object-cover"
-                                sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
+                                sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
                             />
                         </div>
                     </div>

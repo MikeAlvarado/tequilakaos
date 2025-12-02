@@ -33,7 +33,7 @@ const SubscribeFooterSection = () => {
                             />
                         </div>
                         <button className="w-full bg-beige-agave text-dark-black font-body font-bold py-4 rounded-full uppercase tracking-wide hover:bg-white transition-colors text-lg">
-                            Enviar correo
+                            Guardar Correo
                         </button>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ const SubscribeFooterSection = () => {
                             <Instagram size={24} />
                         </a>
                         <a
-                            href="https://www.linkedin.com/company/tequilakaos"
+                            href="https://www.linkedin.com/company/tequila-kaos"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 rounded-full bg-beige-agave text-[#7C3A1E] flex items-center justify-center hover:bg-white transition-colors"
