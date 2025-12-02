@@ -39,7 +39,7 @@ const FoundersSection = () => {
                         {/* Fran - Top Left */}
                         <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-beige-agave/20 shadow-2xl md:-mr-32">
                             <Image
-                                src="/assets/images/fran.jpg"
+                                src="/assets/images/fran.png"
                                 alt="Fran - Founder"
                                 fill
                                 className="object-cover"

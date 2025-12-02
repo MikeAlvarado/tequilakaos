@@ -29,7 +29,7 @@ const ProductSection = () => {
                     </h2>
 
                     {/* Price */}
-                    <p className="font-headline text-beige-agave text-5xl">$600</p>
+                    <p className="font-headline text-beige-agave text-5xl">$472</p>
 
                     {/* Out of Stock Button */}
                     <button
@@ -75,7 +75,7 @@ const ProductSection = () => {
                         </p>
 
                         <p className="font-headline text-beige-agave text-4xl lg:text-5xl">
-                            $600 MXN
+                            $472 MXN
                         </p>
 
                         <button

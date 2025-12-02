@@ -29,7 +29,7 @@ const AgeVerificationModal = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-dark-black/95 backdrop-blur-sm p-4">
             <div className="w-full max-w-md bg-dark-black border border-cinnamon/20 rounded-2xl p-8 flex flex-col items-center text-center shadow-2xl">
                 {/* Logo */}
-                <div className="mb-8 w-32 md:w-40 relative h-32 md:h-40">
+                <div className="mb-0 w-64 md:w-64 relative h-64 md:h-72">
                     <Image
                         src="/assets/images/kaos-logo-gold.png"
                         alt="Tequila Kaos Logo"
@@ -54,15 +54,15 @@ const AgeVerificationModal = () => {
                 <div className="w-full space-y-4 mb-8">
                     <label
                         className={`flex items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${isOver18 === true
-                                ? "border-cinnamon bg-cinnamon/10"
-                                : "border-beige-agave/20 hover:border-beige-agave/40"
+                            ? "border-cinnamon bg-cinnamon/10"
+                            : "border-beige-agave/20 hover:border-beige-agave/40"
                             }`}
                         onClick={() => setIsOver18(true)}
                     >
                         <div
                             className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mr-4 ${isOver18 === true
-                                    ? "border-cinnamon bg-cinnamon"
-                                    : "border-beige-agave/50"
+                                ? "border-cinnamon bg-cinnamon"
+                                : "border-beige-agave/50"
                                 }`}
                         >
                             {isOver18 === true && (
@@ -88,15 +88,15 @@ const AgeVerificationModal = () => {
 
                     <label
                         className={`flex items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${isOver18 === false
-                                ? "border-cinnamon bg-cinnamon/10"
-                                : "border-beige-agave/20 hover:border-beige-agave/40"
+                            ? "border-cinnamon bg-cinnamon/10"
+                            : "border-beige-agave/20 hover:border-beige-agave/40"
                             }`}
                         onClick={() => setIsOver18(false)}
                     >
                         <div
                             className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mr-4 ${isOver18 === false
-                                    ? "border-cinnamon bg-cinnamon"
-                                    : "border-beige-agave/50"
+                                ? "border-cinnamon bg-cinnamon"
+                                : "border-beige-agave/50"
                                 }`}
                         >
                             {isOver18 === false && (
@@ -113,8 +113,8 @@ const AgeVerificationModal = () => {
                     onClick={handleVerification}
                     disabled={isOver18 === null}
                     className={`w-full py-4 rounded-full font-bold text-lg uppercase tracking-wider transition-all duration-300 ${isOver18 !== null
-                            ? "bg-cinnamon hover:bg-dark-cinnamon text-white shadow-lg hover:shadow-cinnamon/20"
-                            : "bg-beige-agave/20 text-beige-agave/40 cursor-not-allowed"
+                        ? "bg-cinnamon hover:bg-dark-cinnamon text-white shadow-lg hover:shadow-cinnamon/20"
+                        : "bg-beige-agave/20 text-beige-agave/40 cursor-not-allowed"
                         }`}
                 >
                     Enviar respuesta
