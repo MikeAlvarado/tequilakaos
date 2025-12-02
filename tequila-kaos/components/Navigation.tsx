@@ -1,27 +1,16 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useScrollThreshold } from "@/hooks/useScroll";
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [showMobileLogo, setShowMobileLogo] = useState(false);
+    // Use the custom hook with 0.8 threshold factor (80vh)
+    const showMobileLogo = useScrollThreshold(0.8);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            // Show logo after scrolling past 80vh
-            const scrolled = window.scrollY > (window.innerHeight * 0.8);
-            setShowMobileLogo(scrolled);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        // Check initial state
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const menuItems = [
         { label: "INICIO", href: "#" },
@@ -55,24 +44,22 @@ const Navigation = () => {
                         </button>
 
                         {/* Mobile: Centered Logo (appears on scroll) */}
-                        {showMobileLogo && (
-                            <div
-                                className={`md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 z-10
+                        <div
+                            className={`md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 z-10 ${showMobileLogo ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                                 }`}
-                            >
-                                <Link href="/" className="block">
-                                    <div className="relative h-10 w-16">
-                                        <Image
-                                            src="/assets/images/kaos-nav-logo.png"
-                                            alt="Kaos Logo"
-                                            fill
-                                            className="object-contain"
-                                            priority
-                                        />
-                                    </div>
-                                </Link>
-                            </div>
-                        )}
+                        >
+                            <Link href="/" className="block">
+                                <div className="relative h-10 w-16">
+                                    <Image
+                                        src="/assets/images/kaos-nav-logo.png"
+                                        alt="Kaos Logo"
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                    />
+                                </div>
+                            </Link>
+                        </div>
 
 
                         {/* Desktop: Logo Image */}
