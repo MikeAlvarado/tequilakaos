@@ -2,7 +2,7 @@ import { Instagram, Linkedin } from "lucide-react";
 
 export default function SubscribeFooterSection() {
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center py-16 px-6 bg-cinnamon text-center overflow-hidden">
+        <section className="relative min-h-screen flex flex-col items-center justify-center py-16 px-6 text-center overflow-hidden">
 
             {/* Subscribe Form */}
             <div className="max-w-md w-full z-10 space-y-8 mb-24">
@@ -21,11 +21,11 @@ export default function SubscribeFooterSection() {
                         <input
                             type="email"
                             id="email"
-                            placeholder="tucorreo@gmail.com"
+                            placeholder="tucorreo@dominio.com"
                             className="w-full bg-transparent border border-dark-cinnamon/30 rounded-lg p-3 text-beige-agave placeholder:text-beige-agave/20 focus:outline-none focus:border-dark-cinnamon transition-colors"
                         />
                     </div>
-                    <button className="w-full bg-beige-agave text-cinnamon font-semibold py-3 rounded-full uppercase tracking-wide hover:bg-white transition-colors">
+                    <button className="w-full bg-beige-agave text-black font-semibold py-3 rounded-full uppercase tracking-wide hover:bg-white transition-colors">
                         Enviar correo
                     </button>
                 </div>
