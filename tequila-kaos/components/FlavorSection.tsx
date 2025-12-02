@@ -50,14 +50,16 @@ const FlavorSection = () => {
                     </div>
 
                     {/* Desktop: Bottle Image */}
-                    <div className="hidden md:block relative w-64 h-[500px] lg:w-80 lg:h-[600px]">
-                        <Image
-                            src="/assets/images/kaos-bottle.png"
-                            alt="Kaos Bottle"
-                            fill
-                            className="object-contain"
-                            sizes="(max-width: 1200px) 50vw, 33vw"
-                        />
+                    <div className="hidden md:flex relative h-[80vh] items-center justify-center w-full">
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/assets/images/kaos-bottle.png"
+                                alt="Kaos Bottle"
+                                fill
+                                className="object-contain drop-shadow-2xl"
+                                sizes="(max-width: 1200px) 50vw, 33vw"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

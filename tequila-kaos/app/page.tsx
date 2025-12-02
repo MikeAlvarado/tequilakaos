@@ -7,6 +7,7 @@ import CocktailsSection from "@/components/CocktailsSection";
 import FlavorSection from "@/components/FlavorSection";
 import FoundersSection from "@/components/FoundersSection";
 import SubscribeFooterSection from "@/components/SubscribeFooterSection";
+import FlavorAuthenticWrapper from "@/components/FlavorAuthenticWrapper";
 
 export default function Home() {
   return (
@@ -17,8 +18,7 @@ export default function Home() {
       <ProductSection />
       <CocktailsSection />
       <FoundersSection />
-      <FlavorSection />
-      <AuthenticSection />
+      <FlavorAuthenticWrapper />
       <SubscribeFooterSection />
     </main>
   );
