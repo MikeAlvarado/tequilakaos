@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 
-const BottleSection = () => {
+const AuthenticSection = () => {
     return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-dark-cinnamon">
+        <section className="relative min-h-screen w-full overflow-hidden ">
             {/* Background Jaguar Image - Add your jaguar image here */}
             <div className="absolute inset-0 z-0">
-                {/* Placeholder for jaguar background - replace with actual image when available */}
+                {/* Placeholder for jaguar background - replace with actual image when available
                 <div className="absolute inset-0 bg-gradient-to-br from-dark-cinnamon via-cinnamon/50 to-dark-black opacity-90"></div>
-                {/* Uncomment when jaguar image is available:
+                 */}
                 <Image
                     src="/assets/images/jaguar-background.png"
                     alt="Jaguar Background"
@@ -16,12 +16,11 @@ const BottleSection = () => {
                     className="object-cover opacity-40"
                     priority
                 />
-                */}
             </div>
 
-            {/* Dark overlay for better text readability */}
+            {/* Dark overlay for better text readability 
             <div className="absolute inset-0 bg-gradient-to-b from-dark-black/50 via-transparent to-dark-black/80 z-10"></div>
-
+                */}
             {/* Content Container */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-20">
                 {/* Desktop Layout */}
@@ -106,10 +105,11 @@ const BottleSection = () => {
                 </div>
             </div>
 
-            {/* Bottom gradient fade to next section */}
+            {/* Bottom gradient fade to next section
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-dark-black z-10"></div>
+       */}
         </section>
     );
 };
 
-export default BottleSection;
+export default AuthenticSection;
