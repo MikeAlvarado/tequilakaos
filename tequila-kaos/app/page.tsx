@@ -4,6 +4,8 @@ import Navigation from "@/components/Navigation";
 import ProductSection from "@/components/ProductSection";
 import AuthenticSection from "@/components/AuthenticSection";
 import CocktailsSection from "@/components/CocktailsSection";
+import FlavorSection from "@/components/FlavorSection";
+import FoundersSection from "@/components/FoundersSection";
 import SubscribeFooterSection from "@/components/SubscribeFooterSection";
 
 export default function Home() {
@@ -14,6 +16,8 @@ export default function Home() {
       <HeroSection />
       <ProductSection />
       <CocktailsSection />
+      <FoundersSection />
+      <FlavorSection />
       <AuthenticSection />
       <SubscribeFooterSection />
     </main>
