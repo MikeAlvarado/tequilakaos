@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import ProductSection from "@/components/ProductSection";
 import AuthenticSection from "@/components/AuthenticSection";
 import CocktailsSection from "@/components/CocktailsSection";
+import SubscribeFooterSection from "@/components/SubscribeFooterSection";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <ProductSection />
       <CocktailsSection />
       <AuthenticSection />
-
+      <SubscribeFooterSection />
     </main>
   );
 }
