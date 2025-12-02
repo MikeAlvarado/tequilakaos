@@ -16,7 +16,12 @@ const urbanist = Urbanist({
 
 export const metadata: Metadata = {
   title: "Tequila Kaos",
-  description: "Tequila Kaos - Website Oficial",
+  description: "Tequila Kaos",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

@@ -1,8 +1,47 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const SubscribeFooterSection = () => {
+    const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setMessage({ type: "error", text: "Por favor ingresa un correo válido" });
+            return;
+        }
+
+        setLoading(true);
+        setMessage(null);
+
+        try {
+            // Add email to Firestore
+            await addDoc(collection(db, "subscribers"), {
+                email: email.toLowerCase().trim(),
+                subscribedAt: Timestamp.now(),
+                source: "website",
+            });
+
+            setMessage({ type: "success", text: "¡Gracias por suscribirte! Te mantendremos informado." });
+            setEmail(""); // Clear the form
+        } catch (error) {
+            console.error("Error saving email:", error);
+            setMessage({ type: "error", text: "Hubo un error. Por favor intenta de nuevo." });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <section className="relative w-full bg-dark-black">
             {/* Subscribe Area */}
@@ -17,7 +56,7 @@ const SubscribeFooterSection = () => {
                         únicas y sorpresas que no publicamos en ningún otro lado.
                     </p>
 
-                    <div className="w-full max-w-md mx-auto space-y-4 pt-4">
+                    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-4 pt-4">
                         <div className="flex flex-col items-start gap-2">
                             <label
                                 htmlFor="email"
@@ -28,14 +67,29 @@ const SubscribeFooterSection = () => {
                             <input
                                 type="email"
                                 id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="tucorreo@gmail.com"
                                 className="w-full bg-transparent border border-beige-agave/30 rounded-lg p-4 text-beige-agave placeholder:text-beige-agave/20 focus:outline-none focus:border-beige-agave transition-colors font-body"
+                                required
+                                disabled={loading}
                             />
                         </div>
-                        <button className="w-full bg-beige-agave text-dark-black font-body font-bold py-4 rounded-full uppercase tracking-wide hover:bg-white transition-colors text-lg">
-                            Guardar Correo
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="w-full bg-beige-agave text-dark-black font-body font-bold py-4 rounded-full uppercase tracking-wide hover:bg-white transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            {loading ? "Guardando..." : "Guardar Correo"}
                         </button>
-                    </div>
+
+                        {/* Success/Error Message */}
+                        {message && (
+                            <p className={`text-sm font-body ${message.type === "success" ? "text-green-400" : "text-red-400"}`}>
+                                {message.text}
+                            </p>
+                        )}
+                    </form>
                 </div>
 
                 {/* Health Warning */}
